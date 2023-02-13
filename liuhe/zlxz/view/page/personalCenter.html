@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../../public/common/css/page/common-v.css">
+    <link rel="stylesheet" href="../../public/common/css/page/personalCenter.css">
+    <link rel="stylesheet" href="../../plugin/layui/css/layui.css">
+    <script type="text/javascript" src="../../plugin/layui/layui.all.js"></script>
+</head>
+
+<body>
+    <div class="header-part"></div>
+    <div class="banner mb20">
+        <img src="../../public/images/personalCenter/banner.png" alt="">
+        <p>个人中心</p>
+    </div>
+    <div class="main wrap ma mb20 displayFlex">
+        <div class="main-left">
+            <div class="info-box">
+                <p class="name">
+                    <img src="../../public/images/personalCenter/icon.png" />
+                    <span id="enterpriseName">欢迎您双峰县定胜畜禽贸易有限公司</span>
+                </p>
+                <div class="button primary mt10" id="loginout">退出登录</div>
+            </div>
+            <div class="tab-buttons mt30">
+                <!-- <p>企业设置</p> -->
+                <ul>
+                    <li class="active">企业设置</li>
+                    <li>我的消息</li>
+                    <li>修改密码</li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-right flex1">
+            <div class="tab-container">
+                <!-- 企业设置 -->
+                <div class="tab-item">
+                    <div class="title-box">
+                        <span>企业资料</span>
+                    </div>
+                    <div class="form-box info-box">
+                        <div class="form-item mt30">
+                            <label for=""><i class="red mr5">*</i>企业名称:</label>
+                            <div class="form-item-right">
+                                <input type="text" placeholder="请输入您的企业名称" class="company">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for=""><i class="red mr5">*</i>联系人:</label>
+                            <div class="form-item-right">
+                                <input type="text" placeholder="请输入联系人" class="contact-name">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for=""><i class="red mr5">*</i>联系电话:</label>
+                            <div class="form-item-right">
+                                <input type="text" placeholder="请输入联系电话" class="contact-phone">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for=""><i class="red mr5">*</i>所属地区:</label>
+                            <div class="form-item-right displayFlex">
+                                <!-- 省份选择 -->
+                                <select id="prov" name="prov" onchange="showCity(this)">
+                                    <option value="">-请选择省份-</option>
+                                </select>
+                                <!-- 城市选择 -->
+                                <select id="city" onchange="showCountry(this)" class="ml10 mr10">
+                                    <option value="">-请选择城市-</option>
+                                </select>
+                                <!-- 区县选择 -->
+                                <select id="country" onchange="selectCountry(this)">
+                                    <option value="">-请选择县区-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for=""><i class="red mr5">*</i>详细地址:</label>
+                            <div class="form-item-right">
+                                <textarea placeholder="请输入地址" class="detailed-address"></textarea>
+                            </div>
+                        </div>
+                        <!-- <div class="form-item">
+                            <label for=""><i class="red mr5">*</i>所属行业:</label>
+                            <div class="form-item-right">
+                                <ul class="industry-list clearfix">
+                                    <li><input type="radio" name="1" value="O2O" />O2O</li>
+                                    <li><input type="radio" name="1" value="信息技术" />信息技术</li>
+                                    <li><input type="radio" name="1" value="大数据" />大数据</li>
+                                    <li><input type="radio" name="1" value="物联网" />物联网</li>
+                                    <li><input type="radio" name="1" value="智能硬件" />智能硬件</li>
+                                    <li><input type="radio" name="1" value="艺术设计" />艺术设计</li>
+                                    <li><input type="radio" name="1" value="社交服务" />社交服务</li>
+                                    <li><input type="radio" name="1" value="房产酒店" />房产酒店</li>
+                                    <li><input type="radio" name="1" value="TMT" />TMT</li>
+                                    <li><input type="radio" name="1" value="云计算" />云计算</li>
+                                    <li><input type="radio" name="1" value="软件工程" />软件工程</li>
+                                    <li><input type="radio" name="1" value="新能源" />新能源</li>
+                                    <li><input type="radio" name="1" value="互联网+" />互联网+</li>
+                                    <li><input type="radio" name="1" value="农业" />农业</li>
+                                    <li><input type="radio" name="1" value="高端制作" />高端制作</li>
+                                    <li><input type="radio" name="1" value="餐饮服务" />餐饮服务</li>
+                                    <li><input type="radio" name="1" value="大消费" />大消费</li>
+                                    <li><input type="radio" name="1" value="教育" />教育</li>
+                                    <li><input type="radio" name="1" value="汽车交通" />汽车交通</li>
+                                    <li><input type="radio" name="1" value="房户服务" />房户服务</li>
+                                    <li><input type="radio" name="1" value="医疗健康" />医疗健康</li>
+                                    <li><input type="radio" name="1" value="旅游" />旅游</li>
+                                    <li><input type="radio" name="1" value="本地生活" />本地生活</li>
+                                    <li><input type="radio" name="1" value="游戏" />游戏</li>
+                                    <li><input type="radio" name="1" value="广告营销" />广告营销</li>
+                                    <li><input type="radio" name="1" value="硬件" />硬件</li>
+                                </ul>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="form-item">
+                            <label for=""><i class="red mr5">*</i>企业logo:</label>
+                            <div class="form-item-right">
+                                <ul id="upload-files" class="fl"></ul>
+                                <div class="upload-btn fl">
+                                    <img src="../../public/images/consulting/upload-icon.png" alt="" />
+                                    <input id="uploader-input" class="upload_file" type="file" accept="image/*">
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="button primary" style="margin-left:140px" id="confirm">保存</div>
+                    </div>
+                </div>
+                <!-- 我的消息 -->
+                <div class="tab-item">
+                    <div class="title-box">
+                        <span>我的消息</span>
+                    </div>
+                    <div class="demoTable">
+                        咨询时间：
+                        <div class="layui-inline">
+                            <input type="text" class="layui-input" id="time" placeholder="选择时间范围">
+                        </div>
+                        状态：
+                        <div class="layui-inline">
+                            <select class="select-style" id="status">
+                                <option value="">请选择</option>
+                                <option value="已回复">已回复</option>
+                                <option value="待回复">待回复</option>
+                            </select>
+                        </div>
+                        <button class="layui-btn" data-type="reload">搜索</button>
+                    </div>
+                    <table id="tableList" lay-filter="tableList"></table>
+                    <script type="text/html" id="barDemo">
+                        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+                    </script>
+                </div>
+                <!-- 修改密码 -->
+                <div class="tab-item">
+                    <div class="title-box">
+                        <span>修改密码</span>
+                    </div>
+                    <div class="form-box" style="width:340px;">
+                        <div class="form-item mt30">
+                            <label for=""><i class="red mr5">*</i>手机号:</label>
+                            <div class="form-item-right">
+                                <input type="text" placeholder="请输入手机号" class="change-phone">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for=""><i class="red mr5">*</i>验证码:</label>
+                            <div class="form-item-right displayFlex">
+                                <div class="flex1">
+                                    <input type="text" placeholder="请输入验证码" class="change-verification-code">
+                                </div>
+                                <div class="ml5">
+                                    <img src="" alt="" id="codeImg">
+                                    <!-- <div class="button primary" id="send-btn">
+                                        发送验证码
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for=""><i class="red mr5">*</i>新密码:</label>
+                            <div class="form-item-right">
+                                <input type="password" placeholder="请输入新密码" class="change-new-pwd">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for=""><i class="red">* </i>确认密码:</label>
+                            <div class="form-item-right">
+                                <input type="password" placeholder="请输入确认密码" class="change-again-pwd">
+                            </div>
+                        </div>
+                        <div class="button primary" style="margin-left:140px" id="changeConfirm">立即修改</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-part"></div>
+    <script src="../../public/common/js/libs/request.js"></script>
+    <script src="../../plugin/jQuery/jQuery.min.js"></script>
+    <script src="../../plugin/layer/layer.js"></script>
+    <script src="../../public/common/js/page/DcUtils.js"></script>
+    <script src="../../plugin/lzrCompressImg/lrz.bundle.js"></script>
+    <script src="../../public/common/js/page/upload.js"></script>
+    <script src="../../public/common/js/provice.js"></script>
+    <script src="../../public/common/js/page/personalCenter.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".header-part").load("../../component/header.html?v0821");
+            $(".footer-part").load("../../component/footer.html?v0821");
+        })
+    </script>
+</body>
+
+</html>

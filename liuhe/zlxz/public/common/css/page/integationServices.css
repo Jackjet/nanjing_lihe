@@ -1,0 +1,13 @@
+.banner{
+    width:100%;
+}
+.list ul li{
+    margin-bottom:10px;
+}
+.list ul li .title{
+   line-height:30px; 
+}
+.list ul li .inner p{
+    line-height:28px;
+    font-size:14px;
+}

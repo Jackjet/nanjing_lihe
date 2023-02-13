@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/common/css/frameWork.css">
+    <link rel="stylesheet" href="../plugin/layui/css/layui.css">
+    <script type="text/javascript" src="../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../plugin/bootstrap/bootstrap.min.js"></script>
+    <title>南京六合</title>
+    <style>
+        .login-page {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background: url("../public/images/contact/banner.png");
+            background-size: 100% 100%;
+        }
+
+        .login-text {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .login-text h2 {
+            font-size: 40px;
+        }
+
+        .login-text h1 {
+            font-weight: bold;
+            font-size: 80px;
+            margin: 60px 0;
+        }
+
+        .login-from {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .from-box {
+            width: 450px;
+            height: 450px;
+            background-color: royalblue;
+            border-radius: 20px;
+            /* opacity: 0.3; */
+            border: 1px solid blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-tabs {
+            width: 400px;
+            height: 400px;
+            background: blue;
+            border-radius: 15px;
+            padding: 10px 50px;
+            box-sizing: border-box;
+            color: #fff;
+            position: relative;
+        }
+
+        .layui-tab-title {
+            display: flex;
+            justify-content: center;
+        }
+
+        .layui-tab-title li {
+            font-size: 20px;
+        }
+
+        .layui-tab-title .layui-this {
+            color: #fff !important;
+
+        }
+
+        .layui-form-item {
+            margin-top: 25px;
+        }
+
+        .layui-btn {
+            width: 100%;
+        }
+
+        .layui-form-label {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .registerBtnHtml {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="login-text">
+            <h2>南京六合经开区园区信息化平台</h2>
+            <h1>让企业数据产生价值</h1>
+            <h2>优化企业、产业、政府三者关系</h2>
+        </div>
+        <div class="login-from">
+            <div class="from-box">
+                <div class="form-tabs">
+                    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">短信登录</li>
+                            <li>密码登录</li>
+                        </ul>
+                        <div class="layui-tab-content" style="height: 100px;">
+                            <div class="layui-tab-item layui-show">
+                                <form class="layui-form layui-form-pane" action="">
+                                    <div class="layui-form-item">
+                                        <input type="text" name="phone" id="phones" lay-verify="phone"
+                                            autocomplete="off" placeholder="请输入手机号" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" id="duanxin"><span id="vcode1">短信验证</span><span
+                                                id="vcode2" style="display: none;color:#555">60重新发送</span></label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="code" lay-verify="code" autocomplete="off"
+                                                placeholder="请输入短信验证码" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="layui-form-item">
+                                        <label class="layui-form-label">
+                                            <img id="yzmCode" src="" alt="">
+                                        </label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="varCode" lay-verify="varCode" autocomplete="off"
+                                                placeholder="请输入验证码" class="layui-input">
+                                        </div>
+                                    </div> -->
+                                    <div class="layui-form-item">
+                                        <button type="submit" class="layui-btn" lay-submit="" lay-filter="codelogin">登
+                                            录</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="layui-tab-item">
+                                <form class="layui-form layui-form-pane" action="">
+                                    <div class="layui-form-item">
+                                        <input type="text" name="phone" lay-verify="phone" autocomplete="off"
+                                            placeholder="请输入手机号" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <input type="password" name="password" lay-verify="password" placeholder="请输入密码"
+                                            autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">
+                                            <img id="maCode" src="" alt="">
+                                        </label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="varCode" lay-verify="varCode" autocomplete="off"
+                                                placeholder="请输入验证码" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <button type="submit" class="layui-btn" lay-submit="" lay-filter="userlogin">登
+                                            录</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="registerBtnHtml" href="register.html">注册</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="../plugin/Md5/md5.js"></script>
+    <script src="../public/common/js/libs/request.js"></script>
+    <script>
+        let request = new Call_Request();
+        let codeId = Date.parse(new Date());
+        layui.use(['form'], function () {
+            var form = layui.form
+            //自定义验证规则
+            form.verify({
+                phone: function (value) {
+                    let reg = /^1[3456789]{1}\d{9}$/;
+                    if (!value) {
+                        return '请输入手机号码';
+                    } else if (!reg.test(value)) {
+                        return '请输入正确手机号码'
+                    }
+                },
+                code: function (value) {
+                    if (value.length < 4) {
+                        return '请输入短信验证码';
+                    }
+                },
+                varCode: function (value) {
+                    if (value.length < 4) {
+                        return '请输入验证码';
+                    }
+                },
+                name: function (value) {
+                    if (value.length < 1) {
+                        return '请输入用户名';
+                    }
+                },
+                password: function (value) {
+                    if (value.length < 1) {
+                        return '请输入密码';
+                    }
+                },
+                content: function (value) {
+                    layedit.sync(editIndex);
+                }
+            });
+            // 获取验证码
+            VerificationCodeFun();
+            $('#yzmCode').click(function () {
+                VerificationCodeFun();
+            })
+            $('#maCode').click(function () {
+                VerificationCodeFun();
+            })
+            $('#vcode1').click(function () {
+                let reg = /^1[3456789]{1}\d{9}$/;
+                if (!reg.test($('#phones').val())) {
+                    layer.msg('请输入正确手机号码');
+                } else {
+                    duanxinyanzhengma();
+                    $(this).hide();
+                    $('#vcode2').show();
+                    let num = 60;
+                    let timeId = setInterval(() => {
+                        num -= 1;
+                        if (num > 0) {
+                            $('#vcode2').text(num + '重新发送');
+                        } else {
+                            window.clearInterval(timeId);
+                            $(this).show();
+                            $('#vcode2').text('60重新发送');
+                            $('#vcode2').hide();
+                        }
+                    }, 1000)
+                }
+            })
+            //短信登录
+            form.on('submit(codelogin)', function (data) {
+                request.url = request.Url + request.userSmsSignIn
+                request.method = "get"
+                request.data = {
+                    phone: data.field.phone,
+                    smsCode: data.field.code,
+                }
+                request.redata = function (res) {
+                    if (res.code === 1) {
+                        layer.msg("登录成功！");
+                        sessionStorage.setItem('userInfo', JSON.stringify(res.data));
+                        if (sessionStorage.getItem('userInfo')) {
+                            location.href = "./page/home.html";
+                        }
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                }
+                request.run()
+                return false;
+            });
+            // 密码登录
+            form.on('submit(userlogin)', function (data) {
+                request.url = request.Url + request.userSignIn
+                request.method = "get"
+                request.data = {
+                    phone: data.field.phone,
+                    password: data.field.password,
+                    verificationCodeId: codeId,
+                    verificationCode: data.field.varCode
+                }
+                request.redata = function (res) {
+                    if (res.code === 1) {
+                        layer.msg("登录成功！");
+                        sessionStorage.setItem('userInfo', JSON.stringify(res.data));
+                        if (sessionStorage.getItem('userInfo')) {
+                            location.href = "./page/home.html";
+                        }
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                }
+                request.run()
+                return false;
+            });
+        })
+        function duanxinyanzhengma() {
+            request.url = request.Url + request.publicSendSms
+            request.method = "post"
+            request.data = JSON.stringify({
+                phone: $('#phones').val(),
+                smsToken: hex_md5($('#phones').val() + 'JSfudUS8d3zCCbTe'),
+            })
+            request.redata = function (res) {
+                layer.msg(res.msg);
+            }
+            request.run()
+        }
+        // 获取验证码接口
+        function VerificationCodeFun() {
+            request.url = request.Url + request.publicVerifyCode
+            request.method = "get"
+            request.data = {
+                verificationCodeId: codeId
+            }
+            request.redata = function (res) {
+                if (res.code === 1) {
+                    $('#yzmCode').attr('src', 'data:image/png;base64,' + res.data)
+                    $('#maCode').attr('src', 'data:image/png;base64,' + res.data)
+                } else {
+                    layer.msg(res.msg);
+                }
+            }
+            request.run()
+        }
+    </script>
+</body>
+
+</html>

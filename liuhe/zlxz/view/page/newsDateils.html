@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消息详情</title>
+    <link rel="stylesheet" href="../../public/common/css/page/common-v.css">
+    <style>
+        .dateil-box {
+            width: 70%;
+            margin: auto;
+        }
+
+        .question-details {
+            border: 1px solid #ccc;
+            line-height: 40px;
+            margin-top: 20px;
+        }
+
+        .question-details li {
+            display: flex;
+        }
+
+        .question-details li span {
+            width: 130px;
+            text-align: right;
+        }
+
+        .question-details li p {
+            color: #999999;
+        }
+
+        #tpsc {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #tpsc img {
+            width: 150px;
+            height: 150px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .reply-details {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        .reply-details li {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .reply-details li span {
+            width: 140px;
+            text-align: right;
+        }
+
+        .reply-details li p {
+            width: 400px;
+            padding: 0 20px;
+        }
+
+        .reply-from {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        #reply {
+            width: 500px;
+            height: 100px;
+            padding: 10px;
+        }
+
+        .btns-box {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btns-box span {
+            padding: 10px 20px;
+            background: #169BD5;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-part"></div>
+    <div class="dateil-box">
+        <ul class="question-details">
+            <li><span>企业名称：</span>
+                <p id="qymc"></p>
+            </li>
+            <li><span>联系人：</span>
+                <p id="lxr"></p>
+            </li>
+            <li><span>联系电话：</span>
+                <p id="lxdh"></p>
+            </li>
+            <li><span>咨询时间：</span>
+                <p id="zxsj"></p>
+            </li>
+            <li><span>图片上传（9）：</span>
+                <p id="tpsc"></p>
+            </li>
+            <li><span>所在位置：</span>
+                <p id="szwz"></p>
+            </li>
+            <li><span>留言：</span>
+                <p id="ly"></p>
+            </li>
+        </ul>
+        <ul class="reply-details">
+            <!-- <li><span>历史回复：</span></li>
+            <li><span>管理员：</span>
+                <p>000000000000000000000</p><span>2021-08-12</span>
+            </li> -->
+        </ul>
+        <div class="reply-from">
+            <span>回复：</span>
+            <textarea placeholder="新增回复" id="reply"></textarea>
+        </div>
+        <div class="btns-box">
+            <span onclick="returnHtml()">返 回</span>
+            <span onclick="submint()">提 交</span>
+        </div>
+    </div>
+    <div class="footer-part"></div>
+
+    <script src="../../public/common/js/libs/request.js"></script>
+    <script src="../../plugin/jQuery/jQuery.min.js"></script>
+    <script src="../../plugin/layer/layer.js"></script>
+    <script type="text/javascript">
+        let request = new Call_Request();
+        $(function () {
+            $(".header-part").load("../../component/header.html?v0821");
+            $(".footer-part").load("../../component/footer.html?v0821");
+            detailsDataFun();
+
+        })
+        function returnHtml() {
+            location.href = 'personalCenter.html';
+        }
+        function submint() {
+            if ($('#reply').val()) {
+                request.url = request.Url + request.leavingMessage
+                request.data = JSON.stringify({
+                    id: location.href.split('=')[1],
+                    replyMessage: $('#reply').val()
+                })
+                request.method = "put"
+                request.redata = function (res) {
+                    if (res.code === 1) {
+                        layer.msg(res.msg);
+                        detailsDataFun();
+                    } else {
+                        layer.msg(res.msg);
+                    }
+                }
+                request.run()
+            } else {
+                layer.msg('没有回复内容无需提交');
+            }
+        }
+
+        // 详情接口
+        function detailsDataFun() {
+            request.url = request.Url + request.findById
+            request.data = {
+                id: location.href.split('=')[1]
+            }
+            request.method = "get"
+            request.redata = function (res) {
+                if (res.code === 1) {
+                    $('#qymc').text(res.data.enterpriseName)
+                    $('#lxr').text(res.data.liaisonName)
+                    $('#lxdh').text(res.data.liaisonTel)
+                    $('#zxsj').text(res.data.createTime)
+                    $('#szwz').text(res.data.address)
+                    $('#ly').text(res.data.leavingMessage)
+                    if (res.data.imagesPahts) {
+                        let srcArr = ""
+                        let arr = res.data.imagesPahts.split(',');
+                        arr.forEach(item => {
+                            srcArr += `<img src="${request.Url + item}" alt="">`;
+                        });
+                        $('#tpsc').html(srcArr);
+                    }
+                    if (res.data.replyList.length) {
+                        $('.reply-details').show();
+                        let html = "<li><span>历史回复：</span></li>";
+                        res.data.replyList.forEach(item => {
+                            html += `<li>
+                                        <span>${item.replyUserName}：</span>
+                                        <p>${item.replyMessage}</p>
+                                        <span style="width:240px">${item.createTime}</span>
+                                    </li>`
+                        });
+                        $('.reply-details').html(html);
+                    }
+                } else {
+                    layer.msg(res.msg);
+                }
+            }
+            request.run()
+        }
+    </script>
+</body>
+
+</html>

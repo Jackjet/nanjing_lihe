@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们</title>
+    <link rel="stylesheet" href="../../public/common/css/page/common-v.css">
+    <script type="text/javascript"
+        src="http://api.map.baidu.com/api?type=webgl&v=1.0&ak=rfZGt4c65XKva26hGORXSPZScLqamTnU"></script>
+</head>
+
+<body>
+    <div class="header-part"></div>
+    <div class="banner mb10">
+        <!-- <img src="../../public/images/质量小站1.jpeg" alt=""> -->
+        <!-- <img src="../../public/images/质量小站2.jpeg" alt=""> -->
+    </div>
+    <div style="min-height: 600px;" class="contact-main wrap ma mb20">
+        <div class="title-box mb20">
+            <span>联系我们</span>
+        </div>
+        <div class="list ml100">
+            <p>地址：<span id="address">南京市六合区虎跃东路8号（六合经济开发区科创园）B3一层</span></p>
+            <p>邮编： <span id="code">211599</span></p>
+            <p>联系人：<span id="contact">吴迪</span></p>
+            <p>电话： <span id="phone">025-57675150</span></p>
+            <p>传真：<span id="fax">029—83395153</span></p>
+            <div class="map mb10" id="map-box"></div>
+        </div>
+    </div>
+    <div class="footer-part"></div>
+    <script type="text/javascript" src="../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../public/common/js/page/contact.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".header-part").load("../../component/header.html?v0821");
+            $(".footer-part").load("../../component/footer.html?v0821");
+        })
+    </script>
+</body>
+
+</html>

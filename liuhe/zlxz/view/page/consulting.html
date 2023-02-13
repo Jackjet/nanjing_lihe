@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我要咨询</title>
+    <link rel="stylesheet" href="../../public/common/css/page/common-v.css">
+</head>
+
+<body>
+    <div class="header-part"></div>
+    <div class="banner mb20">
+        <img style="height: 400px;" src="../../public/images/consulting/3.png" alt="">
+    </div>
+    <div class="main wrap ma mb20">
+        <div class="title-box mb20">
+            <span>我要咨询</span>
+        </div>
+        <div class="form-box ml100" style="width:50%; min-width:260px;padding-bottom: 30px;">
+            <div class="form-item mt30">
+                <label for=""><i class="red mr5">*</i>企业名称:</label>
+                <div class="form-item-right">
+                    <input type="text" placeholder="请输入您的企业名称" class="enterprise-name">
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="">地址:</label>
+                <div class="form-item-right">
+                    <input type="text" placeholder="请输入地址" class="address">
+                    <!-- <textarea name="" cols="30" rows="3" placeholder="请输入地址" class="address"></textarea> -->
+                </div>
+            </div>
+            <div class="form-item">
+                <label for=""><i class="red mr5">*</i>标题:</label>
+                <div class="form-item-right">
+                    <input type="text" placeholder="请输入标题" class="title">
+                </div>
+            </div>
+            <div class="form-item">
+                <label for=""><i class="red mr5">*</i>联系人姓名:</label>
+                <div class="form-item-right">
+                    <input type="text" placeholder="请输入联系人姓名" class="phoneName">
+                </div>
+            </div>
+            <div class="form-item">
+                <label for=""><i class="red mr5">*</i>联系电话:</label>
+                <div class="form-item-right">
+                    <input type="text" placeholder="请输入联系电话" class="phone">
+                </div>
+            </div>
+            <div class="form-item">
+                <label for="">留言:</label>
+                <div class="form-item-right">
+                    <textarea name="" placeholder="请输入您的描述内容" class="remark"></textarea>
+                </div>
+            </div>
+            <!-- <div class="form-item">
+                <label for=""><i class="red mr5">*</i>验证码:</label>
+                <div class="form-item-right displayFlex">
+                    <div class="input_wrap flex1">
+                        <input type="text" autocomplete="off" class="yzm" name="password" id="yzm"
+                            placeholder="请输入验证码，区分大小写">
+                    </div>
+                    <div class="ml10">
+                        <img src="" alt="" id="codeImg">
+                    </div>
+                </div>
+            </div> -->
+            <div class="form-item">
+                <label for=""></i>图片上传(9张):</label>
+                <div class="form-item-right clearfix">
+                    <ul id="upload-files" class="fl"></ul>
+                    <div class="upload-btn fl">
+                        <img src="../../public/images/consulting/upload-icon.png" alt="" />
+                        <input name="file" id="uploader-input" class="upload_file" type="file" multiple=""
+                            accept="image/*">
+                    </div>
+                </div>
+            </div>
+
+            <div class="button primary" id="confirm-btn" style="margin-left:140px">提交</div>
+        </div>
+    </div>
+    <div class="footer-part"></div>
+    <script src="../../public/common/js/libs/request.js"></script>
+    <script src="../../plugin/jQuery/jQuery.min.js"></script>
+    <script src="../../plugin/layer/layer.js"></script>
+    <script src="../../public/common/js/page/verify.js"></script>
+    <script src="../../public/common/js/page/DcUtils.js"></script>
+    <script src="../../plugin/lzrCompressImg/lrz.bundle.js"></script>
+    <script src="../../public/common/js/page/upload.js"></script>
+    <script src="../../public/common/js/page/consulting.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".header-part").load("../../component/header.html?v0821");
+            $(".footer-part").load("../../component/footer.html?v0821");
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<div class="header-nav">
+	<div class="header-logo">
+		<div class="logo-img">
+			<img src="../../public/images/login.png" alt="">
+		</div>
+		<span>质量小站</span>
+	</div>
+	<ul class="nav-list">
+		<li class="active" data-href="home.html"><a href="home.html">首页</a></li>
+		<li data-href="platform.html"><a href="platform.html">小站简介</a></li>
+		<li data-href="notice.html"><a href="notice.html">新闻公告</a></li>
+		<li data-href="integrationServices.html"><a href="integrationServices.html">集成服务</a></li>
+		<li onclick="htmlPage('consulting.html')" data-href="consulting.html"><a>我要咨询</a></li>
+		<li onclick="htmlPage('personalCenter.html')" data-href="personalCenter.html"><a>个人中心</a></li>
+		<li data-href="contact.html"><a href="contact.html">联系我们</a></li>
+	</ul>
+</div>
+<script type="text/javascript">
+	function htmlPage(page) {
+		// 登录后进入页面
+		if (sessionStorage.getItem('userInfo')) {
+			location.href = page;
+		} else {
+			location.href = "../login.html";
+		}
+	}
+	$(document).ready(function () {
+		$(".nav-list li").each(function () {//当前页面选中效果
+			var list = String(window.location).split("/")
+			var location = list[list.length - 1]
+			if ($(this).attr('data-href') == location) {
+				$(this).siblings('li').removeClass('active');  // 删除其他兄弟元素的样式
+				$(this).addClass('active');
+			} else if (location.indexOf('type=2') !== -1) {
+				$(".nav-list li").eq(2).addClass('active').siblings('li').removeClass('active')
+			} else if (location.indexOf('newsDateils.html') !== -1) {
+				$(".nav-list li").eq(5).addClass('active').siblings('li').removeClass('active')
+			}
+		});
+
+	});
+</script>

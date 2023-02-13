@@ -1,0 +1,86 @@
+.banner{
+    width:100%;
+    position:relative
+}
+.banner img{
+    display: block;
+    width:100%;
+}
+.banner p{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size:40px;
+    color:#fff;
+}
+.main-left{
+    width:282px;
+    margin-right:15px;
+}
+.info-box{
+    text-align:center;
+}
+.info-box .name{
+    font-size:14px;
+    line-height:18px;
+}
+.info-box .name img{
+    width:32px;
+    vertical-align: middle;
+    margin-right:8px;
+}
+.tab-container .tab-item{
+    display:none;
+}
+.tab-container .tab-item .form-box{
+    width:90%;
+    min-width:716px;
+    min-height:530px;
+}
+.tab-container .tab-item:nth-child(1){
+    display: block;
+}
+.tab-buttons p, .tab-buttons li{
+    width:80%;
+    margin:0 auto;
+    margin-bottom:4px;
+    background:#f8f8f8;
+    font-size:14px;
+    color:#05519a;
+    text-align:center;
+    padding:10px 0;
+    cursor: pointer;
+}
+/* .tab-buttons p{
+    background:#1c66cb;
+    color:#fff; 
+} */
+.tab-buttons li{
+   
+}
+.tab-buttons li.active{
+    background:#1c66cb;
+    color:#fff; 
+}
+.industry-list input{
+	vertical-align: 0;
+	margin-right:4px;
+}
+.industry-list li{
+	float:left;
+	width:16%;
+	text-align: left;
+	font-size:14px;
+}
+
+.demoTable{
+    margin: 20px 0;
+}
+
+.select-style{
+    width: 130px;
+    height: 38px;
+    border:1px solid #D2D2D2;
+    border-radius: 3px;
+}

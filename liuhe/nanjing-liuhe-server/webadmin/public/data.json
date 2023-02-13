@@ -1,0 +1,786 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "name": "城市经济运行分析",
+      "symbolSize": 50,
+      "value": 28.685715,
+      "category": 0
+    },
+    {
+      "id": "0-2",
+      "name": "产业结构分析",
+      "symbolSize": 30,
+      "value": 9.485714,
+      "category": 1
+    },
+    {
+      "id": "0-2-1",
+      "name": "产业分析",
+      "symbolSize": 30,
+      "value": 9.485714,
+      "category": 1
+    },
+    {
+      "id": "0-2-1-1",
+      "name": "第一产业增加值",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-1-2",
+      "name": "第二产业增加值",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-1-3",
+      "name": "第三产业增加值",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-2",
+      "name": "第一产业分析",
+      "symbolSize": 30,
+      "value": 9.485714,
+      "category": 1
+    },
+    {
+      "id": "0-2-2-1",
+      "name": "第一产业区域增加值",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-2-2",
+      "name": "主要农产品产量",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-2-3",
+      "name": "农林牧渔产值",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-2-4",
+      "name": "畜牧存栏",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-3",
+      "name": "第二产业分析",
+      "symbolSize": 30,
+      "value": 9.485714,
+      "category": 1
+    },
+    {
+      "id": "0-2-3-1",
+      "name": "第二产业区域增加值",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-3-2",
+      "name": "区域工业能耗",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-4",
+      "name": "第三产业分析",
+      "symbolSize": 30,
+      "value": 9.485714,
+      "category": 1
+    },
+    {
+      "id": "0-2-4-1",
+      "name": "第三产业发展趋势",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-4-2",
+      "name": "第三产业固定资产投资",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-4-3",
+      "name": "第三产业区域增加",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-2-4-4",
+      "name": "规上服务企业营业区域收入",
+      "symbolSize": 10,
+      "value": 9.485714,
+      "category": 3
+    },
+    {
+      "id": "0-4",
+      "name": "外资与进出口分析",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-4-1",
+      "name": "进出口分析",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-4-1-1",
+      "name": "进出口总额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-4-1-2",
+      "name": "出口总额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-4-1-3",
+      "name": "出口总额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-4-2",
+      "name": "外资分析",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-4-2-1",
+      "name": "区域实际利用外资额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-4-2-2",
+      "name": "三资企业合同金额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-4-2-3",
+      "name": "三资企业注册户数",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-5",
+      "name": "财政收支分析",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-5-1",
+      "name": "区域公共预算支出",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-5-2",
+      "name": "区域公共预算收入",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-5-3",
+      "name": "税收情况分析",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-5-3-1",
+      "name": "地税收入",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-5-3-2",
+      "name": "国税收入",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6",
+      "name": "消费与存款分析",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-6-1",
+      "name": "居民消费",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-6-1-1",
+      "name": "居民消费价格指数",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-1-2",
+      "name": "全体居民人均可支配收入",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-1-3",
+      "name": "城镇居民可支配收入",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-1-4",
+      "name": "农村居民可支配收入",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-2",
+      "name": "存款储蓄",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-6-2-1",
+      "name": "全市金融存款余额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-2-2",
+      "name": "全市金融贷款余额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-2-3",
+      "name": "区域金融信贷",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-3",
+      "name": "社会消费品零售",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-6-3-1",
+      "name": "社会消费品零售总额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-3-2",
+      "name": "全市金融机构存款余额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-6-3-3",
+      "name": "全市金融机构贷款余额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-7",
+      "name": "固定投资分析",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-7-1",
+      "name": "综合分析",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-7-1-1",
+      "name": "年工业投资总额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-7-1-2",
+      "name": "固定资产区域投资",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-7-2",
+      "name": "更新改造",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-7-2-1",
+      "name": "年技改投资额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-7-3",
+      "name": "房地产开发",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-7-3-1",
+      "name": "年房地产投资额",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-7-3-2",
+      "name": "房地产施工面积",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-7-3-3",
+      "name": "房地产竣工面积",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-7-3-4",
+      "name": "区域房地产投资",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 3
+    },
+    {
+      "id": "0-9",
+      "name": "通用子域",
+      "symbolSize": 30,
+      "value": 4,
+      "category": 1
+    },
+    {
+      "id": "0-9-1",
+      "name": "房地产施工分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-2",
+      "name": "金融机构贷款分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-3",
+      "name": "畜牧分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-4",
+      "name": "主要农产品分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-5",
+      "name": "公共预算支出项目分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-6",
+      "name": "区域分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-7",
+      "name": "工业所有制分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-8",
+      "name": "工业行业分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-9",
+      "name": "公共预算税收分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    },
+    {
+      "id": "0-9-10",
+      "name": "共预算非税收分类",
+      "symbolSize": 10,
+      "value": 4,
+      "category": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "0-2",
+      "target": "0"
+    },
+    {
+      "source": "0-2-1",
+      "target": "0-2"
+    },
+    {
+      "source": "0-2-1-1",
+      "target": "0-2-1"
+    },
+    {
+      "source": "0-2-1-2",
+      "target": "0-2-1"
+    },
+    {
+      "source": "0-2-1-3",
+      "target": "0-2-1"
+    },
+    {
+      "source": "0-2-2",
+      "target": "0-2"
+    },
+    {
+      "source": "0-2-2-1",
+      "target": "0-2-2"
+    },
+    {
+      "source": "0-2-2-2",
+      "target": "0-2-2"
+    },
+    {
+      "source": "0-2-2-3",
+      "target": "0-2-2"
+    },
+    {
+      "source": "0-2-2-4",
+      "target": "0-2-2"
+    },
+    {
+      "source": "0-2-3",
+      "target": "0-2"
+    },
+    {
+      "source": "0-2-3-1",
+      "target": "0-2-3"
+    },
+    {
+      "source": "0-2-3-2",
+      "target": "0-2-3"
+    },
+    {
+      "source": "0-2-4",
+      "target": "0-2"
+    },
+    {
+      "source": "0-2-4-1",
+      "target": "0-2-4"
+    },
+    {
+      "source": "0-2-4-2",
+      "target": "0-2-4"
+    },
+    {
+      "source": "0-2-4-3",
+      "target": "0-2-4"
+    },
+    {
+      "source": "0-2-4-4",
+      "target": "0-2-4"
+    },
+    {
+      "source": "0-4",
+      "target": "0"
+    },
+    {
+      "source": "0-4-1",
+      "target": "0-4"
+    },
+    {
+      "source": "0-4-1-1",
+      "target": "0-4-1"
+    },
+    {
+      "source": "0-4-1-2",
+      "target": "0-4-1"
+    },
+    {
+      "source": "0-4-1-3",
+      "target": "0-4-1"
+    },
+    {
+      "source": "0-4-2",
+      "target": "0-4"
+    },
+    {
+      "source": "0-4-2-1",
+      "target": "0-4-2"
+    },
+    {
+      "source": "0-4-2-2",
+      "target": "0-4-2"
+    },
+    {
+      "source": "0-4-2-3",
+      "target": "0-4-2"
+    },
+    {
+      "source": "0-5",
+      "target": "0"
+    },
+    {
+      "source": "0-5-1",
+      "target": "0-5"
+    },
+    {
+      "source": "0-5-2",
+      "target": "0-5"
+    },
+    {
+      "source": "0-5-3",
+      "target": "0-5"
+    },
+    {
+      "source": "0-5-3-1",
+      "target": "0-5-3"
+    },
+    {
+      "source": "0-5-3-2",
+      "target": "0-5-3"
+    },
+    {
+      "source": "0-6",
+      "target": "0"
+    },
+    {
+      "source": "0-6-1",
+      "target": "0-6"
+    },
+    {
+      "source": "0-6-1-1",
+      "target": "0-6-1"
+    },
+    {
+      "source": "0-6-1-2",
+      "target": "0-6-1"
+    },
+    {
+      "source": "0-6-1-3",
+      "target": "0-6-1"
+    },
+    {
+      "source": "0-6-1-4",
+      "target": "0-6-1"
+    },
+    {
+      "source": "0-6-2",
+      "target": "0-6"
+    },
+    {
+      "source": "0-6-2-1",
+      "target": "0-6-2"
+    },
+    {
+      "source": "0-6-2-2",
+      "target": "0-6-2"
+    },
+    {
+      "source": "0-6-2-3",
+      "target": "0-6-2"
+    },
+    {
+      "source": "0-6-3",
+      "target": "0-6"
+    },
+    {
+      "source": "0-6-3-1",
+      "target": "0-6-3"
+    },
+    {
+      "source": "0-6-3-2",
+      "target": "0-6-3"
+    },
+    {
+      "source": "0-6-3-3",
+      "target": "0-6-3"
+    },
+    {
+      "source": "0-7",
+      "target": "0"
+    },
+    {
+      "source": "0-7-1",
+      "target": "0-7"
+    },
+    {
+      "source": "0-7-1-1",
+      "target": "0-7-1"
+    },
+    {
+      "source": "0-7-1-2",
+      "target": "0-7-1"
+    },
+    {
+      "source": "0-7-2",
+      "target": "0-7"
+    },
+    {
+      "source": "0-7-2-1",
+      "target": "0-7-2"
+    },
+    {
+      "source": "0-7-3",
+      "target": "0-7"
+    },
+    {
+      "source": "0-7-3-1",
+      "target": "0-7-3"
+    },
+    {
+      "source": "0-7-3-2",
+      "target": "0-7-3"
+    },
+    {
+      "source": "0-7-3-3",
+      "target": "0-7-3"
+    },
+    {
+      "source": "0-7-3-4",
+      "target": "0-7-3"
+    },
+    {
+      "source": "0-9",
+      "target": "0"
+    },
+    {
+      "source": "0-9-1",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-2",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-3",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-4",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-5",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-6",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-7",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-8",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-9",
+      "target": "0-9"
+    },
+    {
+      "source": "0-9-10",
+      "target": "0-9"
+    }
+  ],
+  "categories": [
+    {
+      "name": "应用"
+    },
+    {
+      "name": "子域"
+    },
+    {
+      "name": "分类"
+    },
+    {
+      "name": "指标"
+    }
+  ]
+}

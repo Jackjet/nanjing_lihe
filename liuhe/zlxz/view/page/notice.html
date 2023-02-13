@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="applicable-device" content="pc">
+    <meta name=renderer content=webkit>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes" name="viewport">
+    <link rel="stylesheet" href="../../plugin/paging/index.css">
+    <link rel="stylesheet" href="../../public/common/css/frameWork.css">
+    <script type="text/javascript" src="../../plugin/jQuery/jQuery.min.js"></script>
+    <title>南京六合</title>
+    <style>
+        .back_notice {
+            display: block;
+            width: 100%;
+        }
+
+        .notice-nav-tabs {
+            width: 90%;
+            height: 200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .notice-nav-tabs dl {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .tabs-active {
+            color: blue;
+        }
+
+        .notice-nav-tabs dl dt {
+            width: 70px;
+            height: 70px;
+        }
+
+        .notice-nav-tabs dl dd {
+            font-weight: bold;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .query-input {
+            background: #eee;
+            width: 90%;
+            height: 100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            padding-left: 40px;
+        }
+
+        #query-val {
+            margin-right: 200px;
+            width: 300px;
+        }
+
+        .notice-list {
+            width: 90%;
+            margin: auto;
+        }
+
+        .dataNull {
+            width: 90%;
+            margin: 20px auto;
+            text-align: center;
+            border: 1px solid #ccc;
+            line-height: 300px;
+            font-size: 24px;
+            display: none;
+        }
+
+        .notice-list li {
+            display: flex;
+            border-bottom: 1px dashed #ccc;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .notice-list li .img-box {
+            width: 345px;
+            height: 190px;
+        }
+
+        .notice-list li .img-box img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .notice-text {
+            flex: 1;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .notice-text h2 {
+            font-size: 18px;
+        }
+
+        .paging-box {
+            width: 90%;
+            margin: auto;
+            height: 100px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+
+<body style="overflow-x: hidden;">
+    <div class="header-part"></div>
+    <div class="notice-page">
+        <img class="back_notice" src="../../public/images/3.png" alt="">
+    </div>
+    <div class="notice-nav-tabs">
+        <dl class="tabs-active">
+            <dt><img src="../../public/images/10.png" alt=""></dt>
+            <dd>平台动态</dd>
+        </dl>
+        <dl>
+            <dt><img src="../../public/images/9.png" alt=""></dt>
+            <dd>行业新闻</dd>
+        </dl>
+        <dl>
+            <dt><img src="../../public/images/8.png" alt=""></dt>
+            <dd>法规文件与解读</dd>
+        </dl>
+        <dl>
+            <dt><img src="../../public/images/8.png" alt=""></dt>
+            <dd>通知公告</dd>
+        </dl>
+    </div>
+    <div class="query-input">
+        搜索：<input type="text" id="query-val" placeholder="请输入文章标题查询">
+    </div>
+    <div class="notice-box">
+        <ul class="notice-list" id="noticeList"></ul>
+        <div class="dataNull">暂无数据</div>
+    </div>
+    <div class="paging-box">
+        <span style="margin-right: 30px;" id="totalNum">共 4 条</span>
+        <div class="paging" id="paging"></div>
+    </div>
+    <script type="text/javascript" src="../../public/common/js/libs/request.js"></script>
+    <div class="footer-part"></div>
+    <script src="../../plugin/paging/index.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".header-part").load("../../component/header.html?v0821");
+            $(".footer-part").load("../../component/footer.html?v0821");
+        })
+    </script>
+    <script>
+        let request = new Call_Request();
+        $(function () {
+            let data = {
+                title: "",
+                type: "平台动态",
+                page: 1,
+                size: 5
+            }
+            $('#query-val').keyup(function (e) {
+                if (e.keyCode === 13) {
+                    data.title = $(this).val();
+                    journalismFun(data);
+                }
+            })
+            $('.notice-nav-tabs dl').click(function () {
+                $(this).addClass("tabs-active");
+                $(this).siblings().removeClass("tabs-active");
+                data.type = $(this).children('dd').text();
+                data.page = 1;
+                data.size = 5;
+                journalismFun(data);
+            })
+            function journalismFun(body) {
+                request.url = request.Url + request.announcementFindAll
+                request.method = "get"
+                request.data = body
+                request.redata = function (res) {
+                    if (res.code === 1) {
+                        if (res.data.totalElements) {
+                            $('.dataNull').hide();
+                            $('.paging-box').show();
+                            let html = '';
+                            res.data.content.forEach((item, index) => {
+                                html += `<li class="list-item" data-id="${item.id}">
+                                        <div class="img-box"><img src="${request.imagesUrl + item.imagesPaht}" alt=""></div>
+                                        <div class="notice-text">
+                                            <h2>${item.title}</h2>
+                                            <p>${item.introduce}</p>
+                                            <span>${item.createTime}</span>
+                                        </div>
+                                    </li>`;
+                            });
+                            $('#totalNum').text(`共 ${res.data.totalElements} 条`)
+                            $('#noticeList').html(html);
+                            $('.list-item').click(function () {
+                                location.href = 'details.html?type=2&id=' + $(this).attr('data-id');
+                            })
+                        } else {
+                            $('.dataNull').show();
+                            $('.paging-box').hide();
+                            $('#noticeList').html("");
+                        }
+                    }
+                }
+                request.run()
+            }
+            new Paging({
+                total: 1,
+                callback: function (index) {
+                    data.page = index;
+                    journalismFun(data);
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>

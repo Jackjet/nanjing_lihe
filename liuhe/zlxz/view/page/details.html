@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情</title>
+    <link rel="stylesheet" href="../../public/common/css/page/common-v.css">
+    <style>
+        #details-box {
+            width: 70%;
+            min-height: 500px;
+            margin: 50px auto;
+        }
+
+        #content-tips {
+            text-align: center;
+            font-size: 30px;
+            color: #666666;
+            line-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-part"></div>
+    <div id="details-box"></div>
+    <div class="footer-part"></div>
+    <script src="../../public/common/js/libs/request.js"></script>
+    <script src="../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".header-part").load("../../component/header.html?v0821");
+            $(".footer-part").load("../../component/footer.html?v0821");
+        })
+        let request = new Call_Request();
+        // 服务商详情
+        if (location.href.split('&')[0].split('=')[1] === '1') {
+            detailsDataFun1();
+        }
+        // 新闻公告详情
+        if (location.href.split('&')[0].split('=')[1] === '2') {
+            detailsDataFun2();
+        }
+        function detailsDataFun1() {
+            request.url = request.Url + request.providerFindById
+            request.data = {
+                id: location.href.split('&')[1].split('=')[1]
+            }
+            request.method = "get"
+            request.redata = function (res) {
+                if (res.code === 1) {
+                    if (res.data.content) {
+                        $('#details-box').html(res.data.content);
+                    } else {
+                        $('#details-box').html('<div id="content-tips">暂无详情</div>');
+                    }
+
+                } else {
+                    layer.msg(data.msg);
+                }
+            }
+            request.run()
+        }
+        function detailsDataFun2() {
+            request.url = request.Url + request.announcementFindById
+            request.data = {
+                id: location.href.split('&')[1].split('=')[1]
+            }
+            request.method = "get"
+            request.redata = function (res) {
+                if (res.code === 1) {
+                    if (res.data.content) {
+                        $('#details-box').html(res.data.content);
+                    } else {
+                        $('#details-box').html('<div id="content-tips">暂无详情</div>');
+                    }
+                } else {
+                    layer.msg(data.msg);
+                }
+            }
+            request.run()
+        }
+    </script>
+</body>
+
+</html>

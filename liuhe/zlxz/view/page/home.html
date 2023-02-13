@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="applicable-device" content="pc">
+    <meta name=renderer content=webkit>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes" name="viewport">
+    <link rel="stylesheet" href="../../public/common/css/libs/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"> </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+    <script type="text/javascript" src="../../plugin/jQuery/jQuery.min.js"></script>
+    <title>南京六合</title>
+    <style>
+        .home-banner img {
+            display: block;
+            width: 100%;
+            height: 500px;
+        }
+
+        .swiper-container {
+            position: relative;
+        }
+
+        .home-page h2 {
+            font-size: 26px;
+            text-align: center;
+            color: #20588E;
+            line-height: 100px;
+        }
+
+        .home-page .home-text {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .home-service-provider {
+            width: 88%;
+            margin: auto;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .provider-item {
+            width: 33%;
+            height: 200px;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hierarchy {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s;
+            background: rgba(0, 0, 0, .3);
+        }
+
+        .hierarchy-text {
+            width: 350px;
+            color: #fff;
+            line-height: 30px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+            margin: 20px;
+        }
+
+        .hierarchy_active {
+            transform: scaleY(1);
+            transform-origin: top;
+            transition: transform 0.5s;
+        }
+
+        .provider-item p {
+            width: 350px;
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+            line-height: 80px;
+            font-size: 20px;
+            color: #fff;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .notice-list {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .notice-list li {
+            width: 300px;
+            padding-bottom: 40px;
+            box-shadow: 0px 0px 10px #555;
+        }
+
+        .notice-list li img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .notice-list li h3 {
+            font-size: 17px;
+            color: #20588E;
+            line-height: 60px;
+            padding: 0 10px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+        }
+
+        .notice-list li p {
+            padding: 0 10px;
+            line-height: 30px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            color: #555;
+        }
+
+        .home-btn-box {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-button {
+            color: #20588E;
+            cursor: pointer;
+        }
+
+        #home-we-img {
+            display: block;
+            width: 80%;
+            margin: auto;
+            margin-top: -40px;
+            margin-bottom: -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-part"></div>
+    <div class="home-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="wrapperBox"></div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="home-page home-we">
+        <h2>关于我们</h2>
+        <p class="home-text">“质量小站” 为园区企业提供计量、标准、认证认可、检验检测、质量管理等核心服务，知识产权、品牌培育、特种设备、教育培训、商业秘密保护等延伸服务</p>
+        <div class="home-page-img">
+            <img id="home-we-img" src="../../public/images/质量小站1.jpeg" alt="">
+        </div>
+    </div>
+    <div class="home-page">
+        <h2>服务商信息</h2>
+        <div class="home-service-provider" id="serviceProvider">
+            <!-- <div class="provider-item provider_1">
+                <div class="hierarchy">
+                    <div class="hierarchy-text hierarchy-text1">
+                        江苏绿动检测科技有限公司综合项目检测包括：主体工程实验区及办公区，辅助工程采样器材室、制样室；购置原子吸收分光光度计、气相色谱仪、离子色谱仪等分析设备，项目建成后具备综合项目检测能力，为客户提供环境监测服务、职业病危害因素检测与评价、公共场所卫生检测、食品检验服务、环保研发检测等技术服务。
+                    </div>
+                </div>
+                <p>江苏绿动检测科技有限公司</p>
+            </div> -->
+        </div>
+    </div>
+    <div class="home-page" style="margin-bottom: 50px;">
+        <h2>新闻公告</h2>
+        <p class="home-text">南京六合经开区150+政府与产业园相关的公告信息</p>
+        <div class="home-page-img">
+            <ul class="notice-list" id="journalism"></ul>
+            <div class="home-btn-box">
+                <span class="page-button" onClick="rouetrClick()">查看更多>></span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-part"></div>
+    <script type="text/javascript" src="../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript">
+        let request = new Call_Request();
+        function rouetrClick() {
+            location.href = "notice.html";
+        }
+        $(function () {
+            $(".header-part").load("../../component/header.html?v0821");
+            $(".footer-part").load("../../component/footer.html?v0821");
+            // 轮播图数据
+            swiperListFun();
+            function swiperListFun() {
+                request.url = request.Url + request.rotationChartFindAll
+                request.method = "get"
+                request.redata = function (res) {
+                    if (res.code === 1) {
+                        let html = '';
+                        res.data.forEach(item => {
+                            html += `<div class="swiper-slide">
+                                        <img src="${request.imagesUrl + item.imagesPaht}" alt="">
+                                    </div>`;
+                        });
+                        $('#wrapperBox').html(html);
+                        new Swiper('.swiper-container', {
+                            autoplay: true,
+                            loop: true,
+                            pagination: {
+                                el: '.swiper-pagination',
+                            },
+                        })
+                    } else {
+
+                    }
+                }
+                request.run()
+            }
+
+            // 服务商
+            serviceProviderFun();
+            function serviceProviderFun() {
+                request.url = request.Url + request.providerFindAll
+                request.method = "get"
+                request.redata = function (res) {
+                    if (res.code === 1) {
+                        let html = '';
+                        res.data.forEach((item, index) => {
+                            html += `<div data-id=${item.id} class="provider-item provider_${index + 1}" style="background-image: url(${request.imagesUrl + item.imagesPaht})">
+                                        <div class="hierarchy">
+                                            <div class="hierarchy-text">${item.introduce}</div>
+                                        </div>
+                                        <p>${item.title}</p>
+                                    </div>`;
+                        });
+                        $('#serviceProvider').html(html);
+                        $('.provider-item').hover(function () {
+                            $(this).children('.hierarchy').addClass('hierarchy_active');
+                        }, function () {
+                            $(this).children('.hierarchy').removeClass('hierarchy_active');
+                        })
+                        $('.provider-item').click(function () {
+                            location.href = 'details.html?type=1&id=' + $(this).attr('data-id');
+                        })
+
+                    } else {
+
+                    }
+                }
+                request.run()
+            }
+
+            // 新闻公告
+            journalismFun();
+            function journalismFun() {
+                request.url = request.Url + request.announcementFindAll
+                request.method = "get"
+                request.redata = function (res) {
+                    if (res.code === 1) {
+                        let html = '';
+                        res.data.content.forEach((item, index) => {
+                            if (index <= 3) {
+                                html += `<li>
+                                        <img src="${request.imagesUrl + item.imagesPaht}" alt="">
+                                        <h3>${item.title}</h3>
+                                        <p>${item.introduce}</p>
+                                    </li>`;
+                            }
+                        });
+                        $('#journalism').html(html);
+                    } else {
+
+                    }
+                }
+                request.run()
+            }
+
+        })
+    </script>
+</body>
+
+</html>
